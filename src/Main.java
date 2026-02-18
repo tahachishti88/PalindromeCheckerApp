@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -65,6 +67,28 @@ public class Main {
             System.out.println("\"" + input5 + "\" is a Palindrome.");
         } else {
             System.out.println("\"" + input5 + "\" is NOT a Palindrome.");
+        }
+        System.out.println();
+
+        System.out.print("[UC6 - Queue + Stack] Enter a string: ");
+        String input6 = scanner.nextLine();
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack6 = new Stack<>();
+        for (char c : input6.toCharArray()) {
+            queue.add(c);
+            stack6.push(c);
+        }
+        boolean isQSPalindrome = true;
+        while (!queue.isEmpty()) {
+            if (!queue.poll().equals(stack6.pop())) {
+                isQSPalindrome = false;
+                break;
+            }
+        }
+        if (isQSPalindrome) {
+            System.out.println("\"" + input6 + "\" is a Palindrome.");
+        } else {
+            System.out.println("\"" + input6 + "\" is NOT a Palindrome.");
         }
 
         scanner.close();
