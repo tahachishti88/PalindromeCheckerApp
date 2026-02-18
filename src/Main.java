@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("====================================");
@@ -12,5 +14,21 @@ public class Main {
         } else {
             System.out.println("[UC2 - Hardcoded] \"" + hardcoded + "\" is NOT a Palindrome.");
         }
+        System.out.println();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("[UC3 - String Reverse] Enter a string: ");
+        String input3 = scanner.nextLine();
+        String reversed = "";
+        for (int i = input3.length() - 1; i >= 0; i--) {
+            reversed = reversed + input3.charAt(i);
+        }
+        if (input3.equals(reversed)) {
+            System.out.println("\"" + input3 + "\" is a Palindrome.");
+        } else {
+            System.out.println("\"" + input3 + "\" is NOT a Palindrome.");
+        }
+
+        scanner.close();
     }
 }
