@@ -6,3 +6,6 @@ public class Main {
         System.out.println("====================================");
     }
 }
+git add .
+git commit -m "Implemented UC1"
+git push origin main
