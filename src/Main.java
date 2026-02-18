@@ -28,6 +28,26 @@ public class Main {
         } else {
             System.out.println("\"" + input3 + "\" is NOT a Palindrome.");
         }
+        System.out.println();
+
+        System.out.print("[UC4 - Char Array] Enter a string: ");
+        String input4 = scanner.nextLine();
+        char[] chars = input4.toCharArray();
+        int left = 0, right = chars.length - 1;
+        boolean isPalindrome = true;
+        while (left < right) {
+            if (chars[left] != chars[right]) {
+                isPalindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+        if (isPalindrome) {
+            System.out.println("\"" + input4 + "\" is a Palindrome.");
+        } else {
+            System.out.println("\"" + input4 + "\" is NOT a Palindrome.");
+        }
 
         scanner.close();
     }
